@@ -12,6 +12,7 @@ const config: GameConfig = {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const game = new Phaser.Game(config)
 
 function preload(): void {

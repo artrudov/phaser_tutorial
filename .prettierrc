@@ -3,5 +3,8 @@
   "trailingComma": "none",
   "singleQuote": true,
   "printWidth": 120,
-  "semi": false
+  "semi": false,
+  "arrowParens": "always",
+  "parser": "typescript",
+  "endOfLine": "lf"
 }
