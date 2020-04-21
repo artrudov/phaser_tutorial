@@ -8,6 +8,7 @@
   "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
   "scripts": {
     "build": "webpack --config scripts/prod.js ",
+    "lint": "npm run lint:js && npm run lint:ts",
     "start": "webpack-dev-server --config scripts/base.js --open"
   },
   "dependencies": {
@@ -45,10 +46,18 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint"
     }
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "src/**/*.{js, jsx}": [
+      "eslint --ext=js,jsx --max-warnings=0"
+    ],
+    "src/**/*.{ts,tsx}": [
+      "prettier-standard --parser typescript",
+      "eslint --ext=ts,tsx",
+      "git add"
+    ]
   }
 }
