@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist/",
+    "target": "ES2017",
+    "module": "commonjs",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "typeRoots": [ "./src/types", "./node_modules/@types"],
+    "paths": {
+      "@app/*": ["src/*"],
+      "@common/*": ["src/common/*"],
+      "@common": ["src/common"],
+      "@const/*": ["src/const/*"],
+      "@const": ["src/const"],
+      "@utils/*": ["src/utils/*"],
+      "@assets/*": ["public/assets/*"],
+      "@assets/": ["public/assets/"],
+      "*":  ["types/*"]
+    }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts"
+  ]
+}
