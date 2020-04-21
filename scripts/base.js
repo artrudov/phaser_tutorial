@@ -3,6 +3,15 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+const app = path.resolve(__dirname, '..', 'src/')
+const common = path.resolve(app, 'common/')
+const consts = path.resolve(app, 'const/')
+const utils = path.resolve(app, 'utils/')
+const types = path.resolve(app, 'types/')
+const assets = path.resolve(app, 'assets/')
+
+console.log(assets)
+
 module.exports = {
   mode: 'development',
   devtool: 'eval-source-map',
@@ -33,12 +42,12 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      app: path.resolve(__dirname, 'src/'),
-      common: path.resolve(__dirname, 'src/common/'),
-      const: path.resolve(__dirname, 'src/const/'),
-      utils: path.resolve(__dirname, 'src/utils/'),
-      types: path.resolve(__dirname, 'src/types/'),
-      assets: path.resolve(__dirname, 'public/assets/')
+      app,
+      common,
+      const: consts,
+      utils,
+      types,
+      assets
     }
   },
   output: {
